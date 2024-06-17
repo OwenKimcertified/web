@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <button onclick = "saveRequest()">글 작성</button>
+<!--    <a href = "/board/save">글 작성(링크)</a>-->
+    <button onclick = "listRequest()">글 목록</button>
+    <button onclick = "pagingRequest()">페이징 목록</button>
+</body>
+<script>
+<!--    function saveRequest() {-->
+<!---->                  // 예전 방식
+<!--    }-->
+
+    const saveRequest = () => {
+        location.href = "/board/save";
+    }
+
+    const listRequest = () => {
+        location.href = "/board/";
+    }
+
+    const pagingRequest = () => {
+        location.href = "board/paging";
+    }
+</script>
+</html>
