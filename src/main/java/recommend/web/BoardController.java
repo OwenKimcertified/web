@@ -74,8 +74,8 @@ public class BoardController {
     // board/paging?page=??
     @GetMapping("/paging")
     public String paging(@PageableDefault(page = 1) Pageable pageable, Model model) {
-//        pageable.getPageNumber(); //몇 페이지에 대한 요청?
-//        page 위치에 있는 값은 0부터(index) 1을 뺴줘야 함.
+        //        pageable.getPageNumber(); //몇 페이지에 대한 요청?
+        //        page 위치에 있는 값은 0부터(index) 1을 뺴줘야 함.
         Page<BoardDTO> boardList = boardService.paging(pageable);
         int blockLimit = 3;
         int startPage = (((int)(Math.ceil((double)pageable.getPageNumber() / blockLimit))) - 1) * blockLimit + 1; // 1 4 7 10 ~~

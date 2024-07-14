@@ -74,6 +74,10 @@ public class BoardService {
         Page<BoardEntity> boardEntities =
                 boardRepository.findAll(PageRequest.of(page, pageLimit, Sort.by(Sort.Direction.DESC, "id")));
         // 목록: id, writer, title, hits, createdTime
-        return boardEntities.map(board -> new BoardDTO(board.getId(), board.getBoardWriter(), board.getBoardTitle(), board.getBoardHits(), board.getCreatedTime()));
+        return boardEntities.map(board -> new BoardDTO(board.getId(),
+                                              board.getBoardWriter(),
+                                              board.getBoardTitle(),
+                                              board.getBoardHits(),
+                                              board.getCreatedTime()));
     }
 }
